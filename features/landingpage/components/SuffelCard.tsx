@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 
 const SuffelCard = () => {
   const [cIn, setcIn] = useState(0);
-     const images = [
+  const images = [
     {
       src: "https://i.pinimg.com/736x/c0/8a/80/c08a8026aba7b3e8e6d905b2416a56be.jpg",
       alt: "FAV SWEET",
@@ -27,7 +27,7 @@ const SuffelCard = () => {
       src: "https://i.pinimg.com/1200x/ec/da/d9/ecdad9e6f73970d0ba23ddc7ebc9128d.jpg",
       alt: "MY BEHAVIOUR",
     },
-     {
+    {
       src: "https://i.pinimg.com/736x/77/4f/1b/774f1bd62a8b721ae3c62dc8cb0a53d6.jpg",
       alt: "FAV PLAYER",
     },
@@ -36,26 +36,26 @@ const SuffelCard = () => {
   return (
     <div
       style={{
-      background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #0d1a36 100%)",
-    }}
-    className=' w-full flex  pt-10  ' >
+        background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #0d1a36 100%)",
+      }}
+      className=' w-full flex  pt-10  ' >
       <div className=' w-full grid grid-cols-3 ' >
- <ShimmerText className=' text-7xl' text={images[cIn].alt.split(" ")[0]} />
-       <Carousel_002
-       className=' '
-       cIndex={(i)=>{setcIn(i)}}
-      images={images}
-      showPagination={true}
-      showNavigation={true}
-      loop={true}
-      //autoplay={true}
-      spaceBetween={40}
-    />
-   
-    <ShimmerText className=' text-amber-300 text-7xl' text={images[cIn].alt.split(" ")[1]} />
+        <ShimmerText className=' text-7xl' text={images[cIn].alt.split(" ")[0]} />
+        <Carousel_002
+          className=' '
+          cIndex={(i) => { setcIn(i % images.length) }}
+          images={images}
+          showPagination={true}
+          showNavigation={true}
+          loop={true}
+          //autoplay={true}
+          spaceBetween={40}
+        />
+
+        <ShimmerText className=' text-amber-300 text-7xl' text={images[cIn].alt.split(" ")[1]} />
       </div>
-   
-      
+
+
     </div>
   )
 }

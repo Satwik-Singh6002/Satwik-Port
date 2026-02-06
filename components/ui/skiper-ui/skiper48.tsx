@@ -63,7 +63,7 @@ const Skiper48 = () => {
 
   return (
     <div className="flex h-full w-full items-center justify-center overflow-hidden bg-[#f5f4f3]">
-      <Carousel_002 cIndex={(i) => {}} className="" images={images} loop />
+      <Carousel_002 cIndex={(i) => { }} className="" images={images} loop />
     </div>
   );
 };
@@ -79,7 +79,7 @@ const Carousel_002 = ({
   autoplay = false,
   spaceBetween = 40,
   cIndex,
-  
+
 }: {
   images: { src: string; alt: string }[];
   className?: string;
@@ -111,13 +111,13 @@ const Carousel_002 = ({
 
       <Swiper
         spaceBetween={spaceBetween}
-        
+
         autoplay={
           autoplay
             ? {
-                delay: 1500,
-                disableOnInteraction: false,
-              }
+              delay: 1500,
+              disableOnInteraction: false,
+            }
             : false
         }
         effect="cards"
@@ -130,24 +130,24 @@ const Carousel_002 = ({
         pagination={
           showPagination
             ? {
-                clickable: true,
-              }
+              clickable: true,
+            }
             : false
         }
         navigation={
           showNavigation
             ? {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }
             : false
         }
         className="Carousal_002 h-[550px] w-[300px]"
         modules={[EffectCards, Autoplay, Pagination, Navigation]}
       >
-        {images.map((image, index) => (
+        {(loop ? [...images, ...images, ...images] : images).map((image, index) => (
           <SwiperSlide key={index} className="rounded-3xl">
-          
+
             <img
               className="h-full w-full object-cover"
               src={image.src}

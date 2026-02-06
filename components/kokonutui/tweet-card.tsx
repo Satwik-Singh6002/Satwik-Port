@@ -31,12 +31,12 @@ type TweetCardProps = {
   isVerified?: boolean;
   timestamp: string;
   reply?: ReplyProps;
-  isReply?:boolean
+  isReply?: boolean
 };
 
 export default function TweetCard({
-  authorName = "Dorian",
-  authorHandle = "dorianbaffier",
+  authorName = "Satwik Singh",
+  authorHandle = "Satwik_Dev",
   authorImage = "https://pbs.twimg.com/profile_images/1992215290936205312/N_EuwLUO_400x400.jpg",
   content = [
     "All components from KokonutUI can now be open in @v0 🎉",
@@ -54,14 +54,14 @@ export default function TweetCard({
     content: "Awesome.",
     isVerified: true,
     timestamp: "Jan 18",
-    
-    
+
+
   },
-  isReply=true
+  isReply = true
 }: TweetCardProps) {
   return (
     <Link
-      href="https://x.com/Sujal3654282297"
+      href="https://x.com"
       target="_blank"
     >
       <div

@@ -3,22 +3,21 @@ import React from 'react'
 
 const GridCarousel = () => {
   const image = [
-  "https://i.ibb.co/ymvRCKFY/kjnkk.jpg",
-  "https://i.ibb.co/d4jKdqgt/bubuj.jpg",
-  "https://i.ibb.co/8D26CYsH/vhbbj.jpg",
-  "https://i.ibb.co/sprzRJqG/fhgh.jpg",
-  "https://i.ibb.co/jkhW77M3/hhj.jpg",
-  "https://i.ibb.co/v6RTDtkc/jjb.jpg",
-  "https://i.ibb.co/5xRwVq3C/jikl.jpg",
-  "https://i.ibb.co/201ccF8x/ghhj.jpg",
-  "https://i.ibb.co/FbwrMg0W/hvvh.jpg",
-  "https://i.ibb.co/fYJP76My/ffggh.jpg",
-  "https://i.ibb.co/r9QW3t5/hhhb.jpg",
-  "https://i.ibb.co/WNsshPgz/hbhyvv.jpg",
-  "https://i.ibb.co/V0JDVJbx/mkk.jpg",
-];
+    "/photo1.jpg",   // Column 1
+    "/photo2.jpg",
+    "/photo3.jpg",
+    "/photo4.jpg",   // Column 2
+    "/photo5.jpg",
+    "/photo6.jpeg",
+    "/photo7.jpeg",  // Column 3
+    "/photo8.jpeg",
+    "/photo9.jpeg",
+    "/photo6.jpeg",  // Column 4
+    "/photo7.jpeg",
+    "/photo8.jpeg",
+  ];
   return (
-    <div>
+    <div className="relative">
       <Skiper30 img={image} />
     </div>
   )

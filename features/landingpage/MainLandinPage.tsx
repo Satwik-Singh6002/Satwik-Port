@@ -20,23 +20,22 @@ import SuffelCard from "./components/SuffelCard";
 import HowerExpand from "./components/HowerExpand";
 import MyDetails from "./components/MyDetails";
 import Contributions from "./components/Contributions";
-import TweetCard from "@/components/kokonutui/tweet-card";
 import XCards from "./components/XCards";
 
 const MainLandinPage = () => {
   return (
     <div className=" h-screen w-screen  ">
-      <section>
+      <section id="home">
         <Hero />
       </section>
-    
-      <section>
+
+      <section id="about">
         <GridCarousel />
       </section>
       {/* <section>
     <ImageCard/>
    </section> */}
-      <section>
+      <section id="blog">
         <FavSongs />
       </section>
       <section>
@@ -45,19 +44,16 @@ const MainLandinPage = () => {
       {/* <section>
     <HowerExpand/>
    </section> */}
-      <section>
+      <section id="stats">
         <MyDetails />
       </section>
       <section>
-        <Contributions/>
+        <Contributions />
       </section>
       <section>
-        
-       <XCards/>
-
-        
+        <XCards />
       </section>
-       
+
     </div>
   );
 };

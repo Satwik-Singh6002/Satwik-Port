@@ -83,7 +83,7 @@ const AnimatedNumber_001 = () => {
                 initial={{ opacity: 0, scale: 0.5, filter: "blur(4px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, scale: 0.5, filter: "blur(4px)" }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.1, ease: "linear" }}
                 viewBox="0 0 12 14"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ const AnimatedNumber_001 = () => {
                 initial={{ opacity: 0, scale: 0.5, filter: "blur(4px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, scale: 0.5, filter: "blur(4px)" }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.1, ease: "linear" }}
                 viewBox="0 0 10 13"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +160,7 @@ export const AnimatedNumber_002 = () => {
   );
 };
 
-export const AnimatedNumber_003 = ({data,des}:{data:number,des:number}) => {
+export const AnimatedNumber_003 = ({ data, des }: { data: number, des: number }) => {
   const [displayNumber, setDisplayNumber] = useState(100);
   const [isAnimating, setIsAnimating] = useState(false);
   const hasAnimated = useRef(false);
@@ -182,8 +182,8 @@ export const AnimatedNumber_003 = ({data,des}:{data:number,des:number}) => {
       currentStep++;
 
       if (currentStep <= steps) {
-        const min = des + currentStep * (des/ steps);
-        const max = des+22+(Math.random()*des);
+        const min = des + currentStep * (des / steps);
+        const max = des + 22 + (Math.random() * des);
         const randomNum = Math.floor(min + Math.random() * (max - min));
         setDisplayNumber(randomNum);
       } else {
@@ -210,7 +210,7 @@ export const AnimatedNumber_003 = ({data,des}:{data:number,des:number}) => {
             setIsAnimating(false);
           }}
         >
-          {formatNumber( displayNumber)}
+          {formatNumber(displayNumber)}
         </motion.div>
       </div>
     </div>

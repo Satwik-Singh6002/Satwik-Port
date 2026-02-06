@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MorphicNavbar from "@/components/kokonutui/morphic-navbar";
+import MotionProvider from "@/components/providers/motion-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,24 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-    //  style={{
-    //         background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
-    //       }}
-
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className=" relative">
-        <div className="  fixed z-90 py-5  w-full ">
-          <MorphicNavbar/> 
-        </div>
-       
-          {children}
+        <MotionProvider>
+          <div className="relative">
+            <div className="fixed z-90 py-5 w-full">
+              <MorphicNavbar />
+            </div>
+            {children}
           </div>
-  
-   
-      
+        </MotionProvider>
       </body>
     </html>
   );

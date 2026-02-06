@@ -19,9 +19,9 @@ export interface CardFlipProps {
   subtitle?: string;
   description?: string;
   features?: string[];
-  emptyRgba?:string;
-  halfRgba?:string;
-  fullRgba?:string;
+  emptyRgba?: string;
+  halfRgba?: string;
+  fullRgba?: string;
 
 }
 
@@ -30,9 +30,9 @@ export default function CardFlip({
   subtitle = "Explore the fundamentals",
   description = "Dive deep into the world of modern UI/UX design.",
   features = ["UI/UX", "Modern Design", "Tailwind CSS", "Kokonut UI"],
-  emptyRgba =`rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 0.15)`,
-  halfRgba=`rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 0.45)`,
-  fullRgba= `rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 0.85)`,
+  emptyRgba = "rgba(255, 165, 0, 0.15)",
+  halfRgba = "rgba(255, 165, 0, 0.45)",
+  fullRgba = "rgba(255, 165, 0, 0.85)",
 }: CardFlipProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -136,7 +136,7 @@ export default function CardFlip({
               </p>
             </div>
 
-            <div className={ features.length <= 5 ? `space-y-2  flex flex-col `:` grid grid-cols-2 `}>
+            <div className={features.length <= 5 ? `space-y-2  flex flex-col ` : ` grid grid-cols-2 `}>
               {features.map((feature, index) => (
                 <div
                   className="flex items-center gap-2 text-lg text-zinc-700 transition-all duration-500 dark:text-zinc-300"

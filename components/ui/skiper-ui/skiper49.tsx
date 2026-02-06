@@ -112,9 +112,9 @@ const Carousel_003 = ({
 `;
   return (
     <motion.div
-    // style={{
-    //         background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
-    //       }}
+      // style={{
+      //         background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
+      //       }}
       initial={{ opacity: 0, translateY: 20 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{
@@ -136,9 +136,9 @@ const Carousel_003 = ({
           autoplay={
             autoplay
               ? {
-                  delay: 1500,
-                  disableOnInteraction: true,
-                }
+                delay: 1500,
+                disableOnInteraction: true,
+              }
               : false
           }
           effect="coverflow"
@@ -156,30 +156,32 @@ const Carousel_003 = ({
           pagination={
             showPagination
               ? {
-                  clickable: true,
-                }
+                clickable: true,
+              }
               : false
           }
           navigation={
             showNavigation
               ? {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }
               : false
           }
           className="Carousal_003    "
           modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
         >
-          {images.map((image, index) => (
-            <SwiperSlide key={index} className="">
-              <img
-                className="h-full w-full  object-cover  "
-                src={image.src}
-                alt={image.alt}
-              />
-            </SwiperSlide>
-          ))}
+          {
+            (loop ? [...images, ...images, ...images] : images).map((image, index) => (
+
+              <SwiperSlide key={index} className="">
+                <img
+                  className="h-full w-full  object-cover  "
+                  src={image.src}
+                  alt={image.alt}
+                />
+              </SwiperSlide>
+            ))}
           {showNavigation && (
             <div>
               <div className="swiper-button-next after:hidden">

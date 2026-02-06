@@ -1,32 +1,36 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
 import { useState } from "react";
 
 const navItems = {
-  "/": {
+  "#home": {
     name: "home",
   },
-  "/works": {
-    name: "works",
+  "#stats": {
+    name: "stats",
   },
-  "/blog": {
+  "#blog": {
     name: "blog",
   },
-  "/about": {
+  "#about": {
     name: "about",
   },
 };
 
 export function MorphicNavbar() {
-  const [activePath, setActivePath] = useState("/");
+  const [activePath, setActivePath] = useState("#home");
 
   const isActiveLink = (path: string) => {
-    if (path === "/") {
-      return activePath === "/";
+    return activePath === path;
+  };
+
+  const handleClick = (path: string) => {
+    setActivePath(path);
+    const element = document.querySelector(path);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    return activePath.startsWith(path);
   };
 
   return (
@@ -42,24 +46,23 @@ export function MorphicNavbar() {
               index < array.length - 1 ? array[index + 1][0] : null;
 
             return (
-              <Link
+              <button
                 className={clsx(
                   "flex items-center justify-center bg-black p-1.5 px-4 text-lg text-white transition-all duration-300 dark:bg-white dark:text-black",
                   isActive
                     ? "mx-2 rounded-xl font-semibold text-lg"
                     : clsx(
-                        (isActiveLink(prevPath || "") || isFirst) &&
-                          "rounded-l-xl",
-                        (isActiveLink(nextPath || "") || isLast) &&
-                          "rounded-r-xl"
-                      )
+                      (isActiveLink(prevPath || "") || isFirst) &&
+                      "rounded-l-xl",
+                      (isActiveLink(nextPath || "") || isLast) &&
+                      "rounded-r-xl"
+                    )
                 )}
-                href="#"
                 key={path}
-                onClick={() => setActivePath(path)}
+                onClick={() => handleClick(path)}
               >
                 {name}
-              </Link>
+              </button>
             );
           })}
         </div>

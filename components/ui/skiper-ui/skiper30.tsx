@@ -21,7 +21,7 @@ const image = [
   "/images/lummi/img13.png",
 ];
 
-const Skiper30 = ({img=image}:{img?:string[]}) => {
+const Skiper30 = ({ img = image }: { img?: string[] }) => {
   const gallery = useRef<HTMLDivElement>(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -58,64 +58,64 @@ const Skiper30 = ({img=image}:{img?:string[]}) => {
   }, []);
 
   return (
-    <main 
-    style={{
-            background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
-          }}
-   
-    className="w-full   text-black">
+    <main
+      style={{
+        background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
+      }}
+
+      className="w-full   text-black">
       <div className="font-geist flex h-[80vh] items-center justify-center gap-2">
 
-          {/* <span className="relative text-yellow-300 max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-white after:to-black after:content-['']">
+        {/* <span className="relative text-yellow-300 max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-white after:to-black after:content-['']">
             scroll down to see
           </span> */}
-          <div className=" text-white text-8xl gap-10 grid grid-cols-2 w-full   ">
-            <div className="  flex justify-end ">
-              <p>THE</p> 
-            </div>
-           
-            <TextLoop
-        className='overflow-y-clip text-amber-300 '
-        transition={{
-          type: 'spring',
-          stiffness: 900,
-          damping: 80,
-          mass: 10,
-        }}
-        variants={{
-          initial: {
-            y: 20,
-            rotateX: 90,
-            opacity: 0,
-            filter: 'blur(4px)',
-          },
-          animate: {
-            y: 0,
-            rotateX: 0,
-            opacity: 1,
-            filter: 'blur(0px)',
-          },
-          exit: {
-            y: -20,
-            rotateX: -90,
-            opacity: 0,
-            filter: 'blur(4px)',
-          },
-        }}
-      >
-        <span>MAN</span>
-        <span>MYTH</span>
-        <span>LEGEND</span>
-        {/* <span>Design Engineers</span> */}
-      </TextLoop> 
+        <div className=" text-white text-8xl gap-10 grid grid-cols-2 w-full   ">
+          <div className="  flex justify-end ">
+            <p>THE</p>
           </div>
 
-         
-          
-      
-    
-     
-     
+          <TextLoop
+            className='overflow-y-clip text-amber-300 '
+            transition={{
+              type: 'spring',
+              stiffness: 900,
+              damping: 200,
+              mass: 10,
+            }}
+            variants={{
+              initial: {
+                y: 20,
+                rotateX: 90,
+                opacity: 0,
+                filter: 'blur(4px)',
+              },
+              animate: {
+                y: 0,
+                rotateX: 0,
+                opacity: 1,
+                filter: 'blur(0px)',
+              },
+              exit: {
+                y: -20,
+                rotateX: -90,
+                opacity: 0,
+                filter: 'blur(4px)',
+              },
+            }}
+          >
+            <span>MAN</span>
+            <span>MYTH</span>
+            <span>LEGEND</span>
+            {/* <span>Design Engineers</span> */}
+          </TextLoop>
+        </div>
+
+
+
+
+
+
+
       </div>
 
       <div
