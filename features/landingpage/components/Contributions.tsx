@@ -36,13 +36,13 @@ const Contributions = () => {
       style={{
       background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #010133 100%)",
     }}
-     className="space-y-6  px-8 flex  flex-col justify-center items-center ">
-          <div className=" flex justify-center flex-col mt-30 mb-11 ">
-                    <ShimmerText className='  text-6xl' text={"MY CONTRIBUTIONS"} />
-                    <ShimmerText className=' text-5xl' text={"THIS YEAR"} />
+     className="space-y-4 md:space-y-6 px-4 sm:px-6 md:px-8 flex flex-col justify-center items-center overflow-hidden">
+          <div className=" flex justify-center flex-col mt-20 md:mt-30 mb-8 md:mb-11 ">
+                    <ShimmerText className='  text-3xl sm:text-5xl md:text-6xl' text={"MY CONTRIBUTIONS"} />
+                    <ShimmerText className=' text-2xl sm:text-4xl md:text-5xl' text={"THIS YEAR"} />
                 </div>
       {/* Contribution Graph */}
-      <div className=" w-full mx-20  rounded-lg border text-white  p-2">
+      <div className=" w-full max-w-full mx-2 sm:mx-6 md:mx-20 rounded-lg border text-white p-2 overflow-x-auto">
         <h1 className=' text-2xl text-[#39D353]'>{year}</h1>
         <ContributionGraph
           className="w-full text-2xl"

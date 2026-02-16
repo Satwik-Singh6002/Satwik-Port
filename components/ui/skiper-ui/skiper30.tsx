@@ -64,12 +64,12 @@ const Skiper30 = ({ img = image }: { img?: string[] }) => {
       }}
 
       className="w-full   text-black">
-      <div className="font-geist flex h-[80vh] items-center justify-center gap-2">
+      <div className="font-geist flex min-h-[60vh] sm:min-h-[80vh] items-center justify-center gap-2 px-2 sm:px-4">
 
         {/* <span className="relative text-yellow-300 max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-white after:to-black after:content-['']">
             scroll down to see
           </span> */}
-        <div className=" text-white text-8xl gap-10 grid grid-cols-2 w-full   ">
+        <div className=" text-white text-4xl sm:text-6xl md:text-8xl gap-4 sm:gap-6 md:gap-10 grid grid-cols-2 w-full max-w-full   ">
           <div className="  flex justify-end ">
             <p>THE</p>
           </div>
@@ -120,7 +120,7 @@ const Skiper30 = ({ img = image }: { img?: string[] }) => {
 
       <div
         ref={gallery}
-        className="relative box-border flex h-[175vh] gap-[2vw] overflow-hidden  p-[2vw]"
+        className="relative box-border flex h-[175vh] gap-[2vw] overflow-x-auto overflow-y-hidden md:overflow-hidden p-[2vw]"
       >
         <Column images={[img[0], img[1], img[2]]} y={y} />
         <Column images={[img[3], img[4], img[5]]} y={y2} />
@@ -146,7 +146,7 @@ type ColumnProps = {
 const Column = ({ images, y }: ColumnProps) => {
   return (
     <motion.div
-      className="relative -top-[45%] flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw] first:top-[-45%] [&:nth-child(2)]:top-[-95%] [&:nth-child(3)]:top-[-45%] [&:nth-child(4)]:top-[-75%]"
+      className="relative -top-[45%] flex h-full flex-shrink-0 w-[80vw] min-w-[280px] md:min-w-[250px] md:w-1/4 flex-col gap-[2vw] first:top-[-45%] [&:nth-child(2)]:top-[-95%] [&:nth-child(3)]:top-[-45%] [&:nth-child(4)]:top-[-75%]"
       style={{ y }}
     >
       {images.map((src, i) => (
@@ -154,6 +154,8 @@ const Column = ({ images, y }: ColumnProps) => {
           <img
             src={`${src}`}
             alt="image"
+            loading="lazy"
+            decoding="async"
             className="pointer-events-none object-cover"
           />
         </div>

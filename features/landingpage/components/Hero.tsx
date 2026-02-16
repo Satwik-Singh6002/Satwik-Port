@@ -20,21 +20,21 @@ const Hero = () => {
 
       className={` relative  h-full  flex-col  w-full flex justify-center items-center `}>
 
-      <div className={` px-0  w-full  z-70 absolute top-18  flex flex-col  `}>
+      <div className={` px-2 sm:px-4 md:px-0 w-full max-w-full z-70 absolute top-14 sm:top-18 flex flex-col overflow-hidden`}>
         {/* <TextRoll  className={` ${textSecondary}   ${bodoniModa.className} text-9xl pb-0  pt-0 mb-2 h-full `} center >
         HELLO
         </TextRoll> */}
         <DynamicText>
 
         </DynamicText>
-        <div className=' w-full flex justify-center gap-6  '>
+        <div className=' w-full flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 '>
           <div className=' '>
-            <TextRoll className={` ${textPrimary} ${geist.className} text-amber-300 font-medium text-8xl  `} center >
+            <TextRoll className={` ${textPrimary} ${geist.className} text-amber-300 font-medium text-4xl sm:text-6xl md:text-8xl `} center >
               i'm
             </TextRoll>
           </div>
 
-          <TextRoll className={` ${textPrimary} ${geist.className} font-medium text-8xl  `} center >
+          <TextRoll className={` ${textPrimary} ${geist.className} font-medium text-4xl sm:text-6xl md:text-8xl `} center >
             SATWIK
           </TextRoll>
         </div>
@@ -42,7 +42,7 @@ const Hero = () => {
 
 
       </div>
-      <div className="relative h-screen z-50 w-full">
+      <div className="relative min-h-[50vh] sm:min-h-screen h-screen z-50 w-full overflow-hidden">
         <CrowdCanvas src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/open-peeps-sheet.png' rows={15} cols={7} />
       </div>
 

@@ -42,8 +42,8 @@ const FavSongs = () => {
       style={{
         background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
       }}
-      className='   flex justify-center flex-col pt-10  bg-transparent w-full'>
-      <ShimmerText className=' p-3 text-6xl' text={'Current Playlist'} />
+      className='   flex justify-center flex-col pt-6 md:pt-10 px-2 sm:px-4 bg-transparent w-full overflow-hidden'>
+      <ShimmerText className=' p-2 sm:p-3 text-3xl sm:text-5xl md:text-6xl' text={'Current Playlist'} />
       <Carousel_003
         images={images}
         showPagination={true}

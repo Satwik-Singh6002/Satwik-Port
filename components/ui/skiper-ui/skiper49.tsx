@@ -95,14 +95,35 @@ const Carousel_003 = ({
   const css = `
   .Carousal_003 {
     width: 100%;
-    height: 490px;
-    padding-bottom: 50px !important;
+    height: 280px;
+    padding-bottom: 40px !important;
+  }
+  @media (min-width: 640px) {
+    .Carousal_003 {
+      height: 380px;
+      padding-bottom: 50px !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    .Carousal_003 {
+      height: 490px;
+    }
   }
   
   .Carousal_003 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px;
+    width: 200px;
+  }
+  @media (min-width: 640px) {
+    .Carousal_003 .swiper-slide {
+      width: 250px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .Carousal_003 .swiper-slide {
+      width: 300px;
+    }
   }
 
   .swiper-pagination-bullet {
@@ -121,7 +142,7 @@ const Carousel_003 = ({
         duration: 0.3,
         delay: 0.5,
       }}
-      className={cn("relative bg-transparent w-full  pt-8 px-5", className)}
+      className={cn("relative bg-transparent w-full pt-4 sm:pt-6 md:pt-8 px-2 sm:px-4 md:px-5 overflow-hidden", className)}
     >
       <style>{css}</style>
 
@@ -179,6 +200,8 @@ const Carousel_003 = ({
                   className="h-full w-full  object-cover  "
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
                 />
               </SwiperSlide>
             ))}

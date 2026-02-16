@@ -64,7 +64,7 @@ const DynamicText = () => {
   return (
     <section
       aria-label="Rapid greetings in different languages"
-      className="flex min-h-[100px] mt-10  items-center justify-center gap-1 p-4"
+      className="flex min-h-[80px] sm:min-h-[100px] mt-6 sm:mt-10 items-center justify-center gap-1 p-2 sm:p-4"
     >
       <div className="relative flex h-16 w-40 items-center justify-center overflow-visible">
         {isAnimating ? (
@@ -72,7 +72,7 @@ const DynamicText = () => {
             <motion.div
               animate={textVariants.visible}
               aria-live="off"
-              className="absolute flex items-center gap-2 font-medium text-2xl text-gray-800 dark:text-gray-200"
+              className="absolute flex items-center gap-2 font-medium text-lg sm:text-2xl text-gray-800 dark:text-gray-200"
               exit={textVariants.exit}
               initial={textVariants.hidden}
               key={currentIndex}
@@ -86,7 +86,7 @@ const DynamicText = () => {
             </motion.div>
           </AnimatePresence>
         ) : (
-          <div className="flex items-center gap-2 font-medium text-4xl text-gray-800 dark:text-gray-200">
+          <div className="flex items-center gap-2 font-medium text-2xl sm:text-4xl text-gray-800 dark:text-gray-200">
             <div
               aria-hidden="true"
               className="h-2 w-2 rounded-full bg-black dark:bg-white"

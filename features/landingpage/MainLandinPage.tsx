@@ -1,57 +1,62 @@
-import {
-  ThemeToggleButton1,
-  ThemeToggleButton2,
-  ThemeToggleButton3,
-  ThemeToggleButton4,
-} from "@/components/ui/skiper-ui/skiper4";
-import { useThemeToggle } from "@/components/ui/skiper-ui/skiper26";
-import React from "react";
+"use client";
 
+import React, { lazy, Suspense } from "react";
 import Hero from "./components/Hero";
-import { CrowdCanvas } from "@/components/ui/skiper-ui/skiper39";
-import Scroll3DText from "./components/Scroll3DText";
-import { Skiper28 } from "@/components/ui/skiper-ui/skiper28";
-import { SpringMouseFollow } from "@/components/ui/skiper-ui/skiper61";
-import { Skiper62 } from "@/components/ui/skiper-ui/skiper62";
-import ImageCard from "./components/ImageCard";
-import GridCarousel from "./components/GridCarousel";
-import FavSongs from "./components/FavSongs";
-import SuffelCard from "./components/SuffelCard";
-import HowerExpand from "./components/HowerExpand";
-import MyDetails from "./components/MyDetails";
-import Contributions from "./components/Contributions";
-import XCards from "./components/XCards";
+const LazyGridCarousel = lazy(() =>
+  import("./components/GridCarousel").then((m) => ({ default: m.default }))
+);
+const LazyFavSongs = lazy(() => import("./components/FavSongs"));
+const LazySuffelCard = lazy(() => import("./components/SuffelCard"));
+const LazyMyDetails = lazy(() => import("./components/MyDetails"));
+const LazyContributions = lazy(() => import("./components/Contributions"));
+const LazyXCards = lazy(() => import("./components/XCards"));
+
+function SectionFallback() {
+  return <div className="min-h-[200px] w-full" aria-hidden="true" />;
+}
 
 const MainLandinPage = () => {
   return (
-    <div className=" h-screen w-screen  ">
+    <div className="min-h-screen w-full overflow-x-hidden">
       <section id="home">
         <Hero />
       </section>
 
       <section id="about">
-        <GridCarousel />
+        <Suspense fallback={<SectionFallback />}>
+          <LazyGridCarousel />
+        </Suspense>
       </section>
       {/* <section>
     <ImageCard/>
    </section> */}
       <section id="blog">
-        <FavSongs />
+        <Suspense fallback={<SectionFallback />}>
+          <LazyFavSongs />
+        </Suspense>
       </section>
       <section>
-        <SuffelCard />
+        <Suspense fallback={<SectionFallback />}>
+          <LazySuffelCard />
+        </Suspense>
       </section>
       {/* <section>
     <HowerExpand/>
    </section> */}
       <section id="stats">
-        <MyDetails />
+        <Suspense fallback={<SectionFallback />}>
+          <LazyMyDetails />
+        </Suspense>
       </section>
       <section>
-        <Contributions />
+        <Suspense fallback={<SectionFallback />}>
+          <LazyContributions />
+        </Suspense>
       </section>
       <section>
-        <XCards />
+        <Suspense fallback={<SectionFallback />}>
+          <LazyXCards />
+        </Suspense>
       </section>
 
     </div>

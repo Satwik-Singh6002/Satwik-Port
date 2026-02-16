@@ -105,7 +105,7 @@ const Carousel_002 = ({
         duration: 0.3,
         delay: 0.5,
       }}
-      className={cn("relative w-full max-w-3xl", className)}
+      className={cn("relative w-full max-w-3xl overflow-hidden", className)}
     >
       <style>{css}</style>
 
@@ -142,7 +142,7 @@ const Carousel_002 = ({
             }
             : false
         }
-        className="Carousal_002 h-[550px] w-[300px]"
+        className="Carousal_002 h-[380px] w-[260px] sm:h-[450px] sm:w-[280px] md:h-[550px] md:w-[300px]"
         modules={[EffectCards, Autoplay, Pagination, Navigation]}
       >
         {(loop ? [...images, ...images, ...images] : images).map((image, index) => (
@@ -152,6 +152,8 @@ const Carousel_002 = ({
               className="h-full w-full object-cover"
               src={image.src}
               alt={image.alt}
+              loading="lazy"
+              decoding="async"
             />
           </SwiperSlide>
         ))}

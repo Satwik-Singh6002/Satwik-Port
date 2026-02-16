@@ -7,8 +7,8 @@ const XCards = () => {
       style={{
         background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
       }}
-      className=" flex flex-col ">
-      <div className=" p-10 flex justify-center ">
+      className=" flex flex-col overflow-hidden">
+      <div className=" p-4 sm:p-6 md:p-10 flex justify-center ">
         <SocialButton />
       </div>
     </div>

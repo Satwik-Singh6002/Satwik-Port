@@ -72,12 +72,12 @@ const MyDetails = () => {
       }}
 
 
-      className=' pb-15 pt-10'>
-      <div className=" flex justify-center flex-col mt-30 mb-15 ">
-        <ShimmerText className='  text-6xl' text={"MY STATS"} />
+      className=' pb-10 md:pb-15 pt-6 md:pt-10 px-2 sm:px-4 overflow-hidden'>
+      <div className=" flex justify-center flex-col mt-20 md:mt-30 mb-10 md:mb-15 ">
+        <ShimmerText className='  text-3xl sm:text-5xl md:text-6xl' text={"MY STATS"} />
         {/* <ShimmerText className=' text-5xl' text={"THIS YEAR"} /> */}
       </div>
-      <div className=' grid grid-cols-3 gap-4'>
+      <div className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto'>
         {
           data.map((item, i) => (
             <div key={i} className=' text-white flex flex-col items-center  '>

@@ -38,11 +38,11 @@ const SuffelCard = () => {
       style={{
         background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #0d1a36 100%)",
       }}
-      className=' w-full flex  pt-10  ' >
-      <div className=' w-full grid grid-cols-3 ' >
-        <ShimmerText className=' text-7xl' text={images[cIn].alt.split(" ")[0]} />
+      className=' w-full flex flex-col md:flex-row pt-6 md:pt-10 px-2 sm:px-4 overflow-hidden' >
+      <div className=' w-full grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 items-center justify-items-center' >
+        <ShimmerText className=' text-4xl sm:text-6xl md:text-7xl order-2 md:order-1' text={images[cIn].alt.split(" ")[0]} />
         <Carousel_002
-          className=' '
+          className=' order-1 md:order-2 w-full max-w-full'
           cIndex={(i) => { setcIn(i % images.length) }}
           images={images}
           showPagination={true}
@@ -52,7 +52,7 @@ const SuffelCard = () => {
           spaceBetween={40}
         />
 
-        <ShimmerText className=' text-amber-300 text-7xl' text={images[cIn].alt.split(" ")[1]} />
+        <ShimmerText className=' text-amber-300 text-4xl sm:text-6xl md:text-7xl order-3' text={images[cIn].alt.split(" ")[1]} />
       </div>
 
 

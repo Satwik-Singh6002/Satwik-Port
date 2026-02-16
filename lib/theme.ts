@@ -1,5 +1,3 @@
-import { text } from "stream/consumers"
-
 export const ColorTheme = ()=>{
     return {
         bgPrimary:" bg-[#0B0F14] ",
